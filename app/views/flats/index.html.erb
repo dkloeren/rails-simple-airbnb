@@ -1,0 +1,26 @@
+<div class="d-flex justify-content-between navbar">
+  <div id='title' class="navbar">
+    <h1>Simple Airbnb</h1>
+  </div>
+  <div id='spacer' class="navbar flex-grow-1">
+    <p> </p>
+  </div>
+
+  <div class="form-outline">
+    <input type="search" id="form1" class="form-control" />
+  </div>
+  <%= link_to "Search Flat", new_flat_path,  class:"btn" %>
+  <%= link_to "Add Flat", new_flat_path,  class:"btn btn-primary" %>
+</div>
+<h1>All Our Flats</h1>
+
+<% @flats.each do |flat| %>
+  <div class="card">
+    <h2><%= flat.name %></h2>
+    <p><%= flat.address %></p>
+    <p>
+      <%= flat.number_of_guests %> |
+      <%= flat.price_per_night %>
+    </p>
+  </div>
+<% end %>
